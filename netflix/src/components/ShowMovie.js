@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const ShowMovie = () => {
@@ -29,13 +30,13 @@ const ShowMovie = () => {
                         <Card.Text> {movie.categories} </Card.Text>
                         <Card.Text> {movie.date} </Card.Text>
                         <Card.Text> {movie.description} </Card.Text>
-                        <Button variant="primary">View</Button>
+                        <Link className="btn btn-primary" to={`/${movie.id}/`}> View more detail </Link>
                     </Card.Body>
                     </Card>
                 )
                 )
             }
-        </div>
+        </div> 
     );
 };
 
